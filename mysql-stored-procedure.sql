@@ -10,11 +10,30 @@ CREATE PROCEDURE findAllCustomers()
 
 BEGIN
 
-  SELECT * FROM customers where customerNumber = 175;
+  SELECT * FROM customers WHERE customerNumber = 175;
 
 END //
 
 DELIMITER ;
 
 
-call findAllCustomers();
+CALL findAllCustomers();
+
+
+
+delimiter //
+
+DROP PROCEDURE IF EXISTS getCusByID //
+
+CREATE PROCEDURE getCusByID (IN cusNum INT)
+
+BEGIN
+
+SELECT * FROM customers WHERE customerNumber = cusNum;
+
+END //
+
+delimiter ;
+
+
+CALL getCusByID(175);
