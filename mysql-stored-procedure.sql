@@ -10,7 +10,7 @@ CREATE PROCEDURE findAllCustomers()
 
 BEGIN
 
-  SELECT * FROM customers;
+  SELECT * FROM customers where customerNumber = 175;
 
 END //
 
